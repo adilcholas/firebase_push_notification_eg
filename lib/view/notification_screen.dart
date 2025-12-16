@@ -14,7 +14,9 @@ class NotificationScreen extends StatelessWidget {
       body: Consumer<NotificationProvider>(
         builder: (context, provider, child) {
           if (provider.messages.isEmpty) {
-            return Center(child: Text("No messages yet!"));
+            return Center(
+              child: Text("No messages yet, please add a message to continue!"),
+            );
           }
           return ListView.builder(
             itemCount: provider.messages.length,
